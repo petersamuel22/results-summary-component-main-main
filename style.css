@@ -1,0 +1,255 @@
+*:first-child {
+    margin-top: 0;
+}
+
+*:last-child {
+    margin-bottom: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+    list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+html,
+body {
+    height: 100%;
+    margin: auto;
+}
+
+/* Set core body defaults */
+body {
+    font-family: 'Hanken Grotesk', sans-serif;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+
+    overflow-x: hidden;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+    max-width: 100%;
+    display: block;
+}
+
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* root var */
+
+:root {
+    /* primary clrs */
+
+    --light-red: #ff5757;
+    --orangey-yellow: #ffb01f;
+    --green-teal: #00bd91;
+    --cobalt-blue: #1125d4;
+
+    /* gradients */
+    --light-slate-blue-background: #7250fc;
+    --light-royal-blue-background: #2e2be9;
+    --violet-blue: #4e21ca;
+    --persian-blue: #1125d4;
+
+    /* neutrals */
+
+    --White: #ffffff;
+    --Pale-blue: #ebf1ff;
+    --Light-lavender: #c8c7ff;
+    --Dark-gray-blue: #303b5a;
+}
+
+/* utility classes */
+
+.padding-block {
+    padding-block: 0.75rem;
+}
+
+/* body */
+
+
+h1 {
+    font-size: 3em;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    gap: 1vw;
+    box-shadow: .5rem 1rem 3rem rgba(0, 0, 0, 0.296);
+    border-radius: 15px;
+}
+
+.left {
+    color: white;
+    border-radius: 15px;
+    width: 15rem;
+    padding: 2rem 1rem;
+    text-align: center;
+    background-image: linear-gradient(to bottom, #7857ff, #664af4, #513ee9, #3931df, #1125d4);
+}
+
+.left p {
+    color: rgb(210, 197, 197);
+}
+
+.results-circle {
+    display: grid;
+    display: inline-block;
+    text-align: center;
+    border-radius: 500px;
+    padding: 1rem 2.5rem;
+    background: linear-gradient(to bottom, #4e21caa4, transparent);
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0rem 1rem;
+}
+
+.right h2 {
+    margin: 0.35rem 0rem;
+}
+
+.right .summary-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9em;
+    font-weight: 600;
+    border-radius: 5px;
+    margin: 0.4rem 0rem;
+    padding: 0.5rem 0.4rem;
+}
+
+.right .summary-item span {
+    color: rgb(180, 173, 173);
+}
+
+.right .summary-name {
+    display: flex;
+}
+
+.right .summary-name p {
+    margin-left: 0.4rem;
+}
+
+.right .first {
+    background-color: #ff575717;
+}
+
+.right .summary-item .reaction {
+    color: var(--light-red);
+}
+
+.right .second {
+    background-color: #ffb11f24;
+}
+
+.right .summary-item .memory {
+    color: var(--orangey-yellow);
+}
+
+.right .third {
+    background-color: #00bd9114;
+}
+
+.right .summary-item .verbal {
+    color: var(--green-teal);
+}
+
+.right .fourth {
+    background-color: #2e2be918;
+}
+
+.right .summary-item .visual {
+    color: var(--light-royal-blue-background);
+}
+
+
+
+.right .button {
+    color: #FFFFFF;
+    font-size: 0.9em;
+    font-weight: 300;
+    border-radius: 50px;
+    padding: 0.5rem 5rem;
+    margin: 0.9rem 0rem;
+    text-align: center;
+    border: none;
+    position: relative;
+    background-color: #232742;
+    z-index: 1;
+}
+
+.right .button::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 50px;
+    background-image: linear-gradient(to bottom, #7857ff, #664af4, #513ee9, #3931df, #1125d4);
+    z-index: -1;
+    transition: opacity 0.5s linear;
+    opacity: 0;
+}
+
+.right .button:hover::before {
+    opacity: 1;
+}
+
+@media (max-width: 800px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
+}
